@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Anon Board</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>📋 School Anon Board</h1>
+    <p class="subtitle">Anonymous • Real-time • For students</p>
+  </header>
+
+  <!-- Channel Tabs -->
+  <nav id="channel-tabs">
+    <button class="tab active" data-channel="General">General</button>
+    <button class="tab" data-channel="Homework Help">Homework</button>
+    <button class="tab" data-channel="Confessions">Confessions</button>
+    <button class="tab" data-channel="Memes">Memes</button>
+    <button class="tab" data-channel="Random">Random</button>
+  </nav>
+
+  <!-- Message Form -->
+  <form id="msg-form">
+    <div class="form-row">
+      <input type="text" id="nickname" placeholder="Nickname (optional)" maxlength="20">
+      <select id="grade">
+        <option value="">Grade</option>
+        <option value="7th">7th</option>
+        <option value="8th">8th</option>
+        <option value="9th">9th</option>
+        <option value="10th">10th</option>
+        <option value="11th">11th</option>
+        <option value="12th">12th</option>
+      </select>
+      <select id="section">
+        <option value="">Section</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+        <option value="E">E</option>
+        <option value="F">F</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <textarea id="message" placeholder="Type your message... (max 500 chars)" maxlength="500" rows="3" required></textarea>
+    </div>
+    <div class="form-row">
+      <span id="char-count">0/500</span>
+      <button type="submit">Send</button>
+    </div>
+  </form>
+
+  <!-- Messages -->
+  <div id="messages-container">
+    <p id="empty-state">No messages yet. Be the first!</p>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
